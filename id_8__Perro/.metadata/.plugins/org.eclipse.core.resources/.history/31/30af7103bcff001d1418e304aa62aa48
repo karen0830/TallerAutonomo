@@ -1,0 +1,91 @@
+package vista.procesos;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import javax.swing.JOptionPane;
+
+import vista.perros.*;
+public class Procesos {
+	HashMap<Integer, Perros> datos = new HashMap<>();
+	Perros perro = new Perros();
+	public void inicio() {
+		String menu = "Ingrese opcion Correcta\n";
+		menu += "1. Ingresar mascota\n";
+		menu += "2. Imprimir mascotas\n";
+		menu += "3. Consultar mascota\n";
+		menu += "7. Salir";
+		int x =  0;
+		do {
+			x = Integer.parseInt(JOptionPane.showInputDialog(menu));
+			opcion(x);
+		}while(x != 7);
+	}
+	
+	
+	public void opcion(int x) {
+		switch (x) {
+		case 1:
+			ingresarMascota();
+			break;
+		case 2:
+			if(datos.size() !=  0) {
+				imprimirDatos();
+			}else System.out.println("Ingrese los datos");
+			break;
+		case 3:
+			if(datos.size() !=  0) {
+				consultarMascota();
+			}else System.out.println("Ingrese los datos");
+			break;
+		default:
+			break;
+		}
+	}
+
+
+	private void ingresarMascota() {
+		int continuar = 0;
+		do {
+			perro.pedirDatos(datos.size() + 1);
+			datos.put(perro.getCodigo(), perro);
+			continuar = validar("Ingrese:\n1. Continuar con otra mascota\n2. SALIR");
+			perro = new Perros();
+		}while(continuar != 2);
+	}
+	
+	public void imprimirDatos() {
+		Iterator<Integer> iter = datos.keySet().iterator();
+		while(iter.hasNext()) {
+			Integer llave = iter.next();
+			System.out.println("Codigo: " + llave + ", nombre: " + datos.get(llave).getNombre()
+					+ ", raza: " + datos.get(llave).getRaza() + ", años: " + datos.get(llave).getAños()
+					+ " y color: " + datos.get(llave).getColor());
+		}
+	}
+	
+	public void consultarMascota() {
+		int llave = 0;
+		int continuar =0;
+		do {
+			llave = Integer.parseInt(JOptionPane.showInputDialog("Ingrese codigo de la mascota a consultar"));
+			if(datos.containsKey(llave)) {
+				System.out.println("Codigo: " + llave + ", nombre: " + datos.get(llave).getNombre()
+						+ ", raza: " + datos.get(llave).getRaza() + ", años: " + datos.get(llave).getAños()
+						+ " y color: " + datos.get(llave).getColor());
+			}else System.out.println(llave + " No se encuentra registrado");
+			continuar = validar("Ingrese:\n1. Consultar otra mascota\n2. SALIR");
+		}while(continuar != 2);
+	}
+	
+	
+	public int validar(String msj) {
+		int x = 0;
+		do {
+			x=Integer.parseInt(JOptionPane.showInputDialog(msj));
+			if(x < 1 || x > 2) {
+			JOptionPane.showMessageDialog(null, "Ingrese dato valido", "Error", JOptionPane.ERROR_MESSAGE);
+			}
+		}while(x < 1 || x > 2);
+		return x;
+	}
+}

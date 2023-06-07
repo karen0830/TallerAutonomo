@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Users\lopez\OneDrive\SENA\Cuarto trimestre\Java\Tallere_Guias_POO\Talleres_Autonomo\id_8__Perro\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3413725848.index
+1762949718.index

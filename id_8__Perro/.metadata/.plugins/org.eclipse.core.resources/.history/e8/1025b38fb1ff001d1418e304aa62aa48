@@ -1,0 +1,12 @@
+package vista.procesos;
+import java.util.HashMap;
+
+import vista.perros.Perros;
+public class Procesos {
+	HashMap<Integer, Perros> datos = new HashMap<>();
+	
+	public void inicio() {
+		
+	}
+	
+}

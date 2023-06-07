@@ -1,0 +1,26 @@
+
+public class Perros {
+	String color;
+	int años;
+	String raza;
+	double peso;
+	
+	public Perros(){
+		
+	}
+	
+	public Perros(String color, int años, String raza, double peso) {
+		this.color = color;
+		this.años = años;
+		this.raza = raza;
+		this.peso = peso;
+	}
+	//encapsulación
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+}

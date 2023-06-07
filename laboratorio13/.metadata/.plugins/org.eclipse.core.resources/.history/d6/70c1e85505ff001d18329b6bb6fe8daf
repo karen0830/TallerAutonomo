@@ -1,0 +1,17 @@
+
+public class Principal {
+
+	Flecha flecha1, flecha2, flecha3;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Principal miP = new Principal();
+	}
+	
+	public Principal() {
+		flecha1 = new Flecha();
+		flecha1.construirFlecha();
+		flecha1.imprimirEspacio();
+	}
+
+}

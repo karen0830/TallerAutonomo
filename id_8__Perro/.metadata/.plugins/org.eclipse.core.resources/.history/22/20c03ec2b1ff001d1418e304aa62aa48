@@ -1,0 +1,98 @@
+import javax.swing.JOptionPane;
+package vista.perros.*;;
+
+public class Perros {
+	private String color;
+	private int años;
+	private String raza;
+	private double peso;
+	private int codigo;
+	private String nombre;
+	public Perros(){
+		
+	}
+	
+	public Perros(String color, int años, String raza, double peso, int codigo) {
+		this.codigo = codigo;
+		this.color = color;
+		this.años = años;
+		this.raza = raza;
+		this.peso = peso;
+	}
+	//encapsulación
+	//color
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	//años
+	public void setAños(int años) {
+		this.años = años;
+	}
+	
+	public int getAños() {
+		return años;
+	}
+	//raza
+	public void setRaza(String raza) {
+		this.raza = raza;
+	}
+	
+	public String getRaza() {
+		return raza;
+	}
+	
+	//peso
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	public double getPeso() {
+		return peso;
+	}
+	
+	//codigo
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	
+	public double getCodigo() {
+		return codigo;
+	}
+	//nombre
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public void pedirDatos(int i) {
+		codigo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese codigo de el perro " + i));
+		nombre = JOptionPane.showInputDialog("Ingrese nombre de la mascota " + i);
+		color = JOptionPane.showInputDialog("Ingrese color de " + getNombre());
+		años = Integer.parseInt(JOptionPane.showInputDialog("Ingrese los años de la mascota " + getNombre()));
+		raza = JOptionPane.showInputDialog("Ingrese raza de " + getNombre());
+	}
+	
+	public void buscarJuguete(String nombre) {
+	    System.out.println(nombre + " El perro está buscando la pelots");
+	    // Lógica adicional para buscar el juguete
+	}
+	
+	public int obtenerEdadHumana() {
+	    // Lógica para calcular la edad aproximada en años humanos
+	    return getAños() * 7; // Suponiendo que la edad se almacena en años caninos
+	}
+	
+	public void dormir(String nombre) {
+	    System.out.println(nombre + " El perro está durmiendo.");
+	    // Lógica adicional de descanso
+	}
+	
+}

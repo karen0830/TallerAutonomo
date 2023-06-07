@@ -1,0 +1,75 @@
+import javax.swing.JOptionPane;
+
+public class Perros {
+	private String color;
+	private int años;
+	private String raza;
+	private double peso;
+	private int codigo;
+	private String nombre;
+	
+	public Perros(){
+		
+	}
+	
+	public Perros(String color, int años, String raza, double peso, int codigo) {
+		this.codigo = codigo;
+		this.color = color;
+		this.años = años;
+		this.raza = raza;
+		this.peso = peso;
+	}
+	//encapsulación
+	//color
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	
+	//años
+	public void setAños(int años) {
+		this.años = años;
+	}
+	
+	public int getAños() {
+		return años;
+	}
+	//raza
+	public void setRaza(String raza) {
+		this.raza = raza;
+	}
+	
+	public String getRaza() {
+		return raza;
+	}
+	
+	//peso
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	public double getPeso() {
+		return peso;
+	}
+	
+	//codigo
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	
+	public double getCodigo() {
+		return codigo;
+	}
+	
+	public void pediirDatos(int i) {
+		codigo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese codigo de el perro " + i));
+		nombre = 
+		color = JOptionPane.showInputDialog("Ingrese color " + 1);
+		años = Integer.parseInt(JOptionPane.showInputDialog("Ingrese los años de la mascota " + i));
+		raza = JOptionPane.showInputDialog("Ingrese raza de ")
+	}
+	
+}
